@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name', 100)->nullable();
             $table->integer('capacity');
             $table->decimal('price', 10, 2);
-            $table->enum('status', ['available', 'occupied'])->default('available');
+            $table->enum('status', ['available', 'reserved'])->nullable();
             $table->timestamps();
         });
     }

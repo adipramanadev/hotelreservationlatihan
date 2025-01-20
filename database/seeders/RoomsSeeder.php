@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Rooms;
 
 class RoomsSeeder extends Seeder
 {
@@ -20,7 +21,7 @@ class RoomsSeeder extends Seeder
                 'name' => 'Room ' . $i,
                 'capacity' => rand(1, 5),
                 'price' => rand(500, 500), //harga dalam satuan besar
-                'status' => ['available', 'reserved'],
+                'status' => ['available', 'reserved'][rand(0, 1)],
                 'created_at' => now(),
                 'updated_at' => now(),
             ];
@@ -28,7 +29,7 @@ class RoomsSeeder extends Seeder
 
         //memasukkan data yang sudah diinputkan ke dalam tabel rooms
         foreach($rooms as $room){
-            App\Models\Room::create($room); //menyimpan data ke dalam tabel rooms dengan meggunakan elequent
+            \App\Models\Rooms::create($room); //menyimpan data ke dalam tabel rooms dengan meggunakan elequent
         }
     }
 }
