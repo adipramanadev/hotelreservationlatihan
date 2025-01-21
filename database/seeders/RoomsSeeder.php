@@ -21,7 +21,7 @@ class RoomsSeeder extends Seeder
                 'name' => 'Room ' . $i,
                 'capacity' => rand(1, 5),
                 'price' => rand(500, 500), //harga dalam satuan besar
-                'status' => ['available', 'reserved'][rand(0, 1)],
+                'status' => ['available', 'reserved'][rand(0, 1)],//rand maksudnya untuk mengacak data
                 'created_at' => now(),
                 'updated_at' => now(),
             ];
